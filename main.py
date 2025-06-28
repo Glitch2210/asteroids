@@ -3,6 +3,7 @@
 # throughout this file
 import pygame
 from constants import *
+from player import *
 
 def main():
     pygame.init()
@@ -13,6 +14,9 @@ def main():
     #print("Starting Asteroids!")
     #print(f"Screen width: {SCREEN_WIDTH}")
     #print(f"Screen height: {SCREEN_HEIGHT}")
+
+    #create player
+    player_1 = Player(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
     while True:
         #check for exit
         for event in pygame.event.get():
@@ -23,11 +27,11 @@ def main():
 
         #Screen Display
         screen.fill(color)
-
+        player_1.draw(screen)
 
         #FPS throtal
         dt =  clock.tick(60) / 1000
-        print(dt)
+        
         pygame.display.flip()
         
         
